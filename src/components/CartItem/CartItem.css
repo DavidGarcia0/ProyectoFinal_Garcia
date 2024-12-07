@@ -1,0 +1,45 @@
+.CartItem {
+    display: flex;
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center;
+    margin: 10px 0;
+    border-bottom: 1px solid #ddd; /* Agregamos una línea de separación para mejorar la estética */
+    padding: 10px 0;
+}
+
+.CartItemDetails {
+    display: flex;
+    justify-content: space-between; /* Espacio entre la imagen y los datos */
+    width: 100%;
+}
+
+.CartItemText {
+    flex: 1;
+    padding-right: 20px; /* Agregar un pequeño espacio entre los datos y la imagen */
+}
+
+.CartItemImg {
+    width: 100px; /* Ajusta el tamaño de la imagen */
+    height: 100px;
+    object-fit: cover;
+    margin-left: 20px; /* Espacio entre los datos y la imagen */
+}
+
+.CartItemName {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.CartItemPrice,
+.CartItemQuantity,
+.CartItemSubtotal {
+    margin: 5px 0;
+}
+
+.Button5 {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}

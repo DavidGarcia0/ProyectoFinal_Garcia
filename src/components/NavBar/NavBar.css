@@ -1,0 +1,36 @@
+.NavBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: #fff;
+}
+
+.NavBar h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.Categories {
+    display: flex;
+    gap: 1.5rem; 
+}
+
+.Option {
+    font-size: 1rem;
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.Option:hover {
+    color: #fff;
+}
+
+.ActiveOption {
+    font-weight: bold;
+    color: #00b4d8; 
+    text-decoration: underline;
+}
