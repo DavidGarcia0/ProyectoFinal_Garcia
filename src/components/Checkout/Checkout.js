@@ -36,18 +36,18 @@ const Checkout = () => {
             const { docs } = productsAddedFromFirestore
 
             docs.forEach(doc => {
-                const dataDoc = doc.data()
-                const stockDb = dataDoc.stockDb
-                
-                const productAddedToCart = cart.find(prod => prod.id === doc.id)
-                const prodQuantity = productAddedToCart?.prodQuantity
-
-                if(stockDb >= prodQuantity) {
-                    batch.update(doc.ref, { stock: stockDb = prodQuantity })
+                const dataDoc = doc.data();
+                const stockDb = dataDoc.stock; // Confirmar que el campo sea 'stock'
+            
+                const productAddedToCart = cart.find(prod => prod.id === doc.id);
+                const prodQuantity = productAddedToCart?.prodQuantity;
+            
+                if (stockDb >= prodQuantity) {
+                    batch.update(doc.ref, { stock: stockDb - prodQuantity });
                 } else {
-                    outOfStock.push({ id: doc.id, ...dataDoc})
+                    outOfStock.push({ id: doc.id, ...dataDoc });
                 }
-            })
+            });
 
             if(outOfStock.length === 0){
                 await batch.commit()
