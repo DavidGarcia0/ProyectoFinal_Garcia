@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "901d8c5e-0636-4379-af8f-3bebb2041346",
+		"name": "Pet Store Mock API",
+		"description": "Colección para probar los endpoints de mocking en la API de la tienda de mascotas.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41543483"
+	},
+	"item": [
+		{
+			"name": "GET - Mocking Pets (100)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/mocks/mockingpets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"mocks",
+						"mockingpets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Mocking Users (50)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/mocks/mockingusers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"mocks",
+						"mockingusers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Generate Data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"users\": 10,\n  \"pets\": 20\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/mocks/generateData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"mocks",
+						"generateData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Pets",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get Users",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
