@@ -29,7 +29,7 @@ npm install
 3. Crear archivo .env:
 ```
 PORT=3000
-MONGO_URL=mongodb://localhost:27017/petstore
+MONGO_URL=(Enviada junto con la del repositorio de github)
 ```
 
 4. Correr el servidor:
@@ -46,7 +46,7 @@ npm test
 Usar imagen de Docker desde Docker Hub
 ```
 docker pull davidng0404/petstore-api
-docker run -p 3000:3000 --env MONGO_URL=mongodb://host.docker.internal:27017/petstore davidng0404/petstore-api
+docker run -p 8080:8080 --env MONGO_URL=mongodb://host.docker.internal:27017/petstore davidng0404/petstore-api
 ```
 
 Usar con docker-compose
