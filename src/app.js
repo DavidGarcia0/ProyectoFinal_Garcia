@@ -1,5 +1,7 @@
 import express from "express";
 import { connectMongoDB } from "./config/mongoDB.config.js";
+import swaggerUi from 'swagger-ui-express';
+import YAML from 'yamljs';
 
 const app = express();
 
@@ -20,11 +22,15 @@ app.use('/api/users', usersRouter);
 import petsRouter from './routes/pets.router.js';
 app.use('/api/pets', petsRouter);
 
+import adoptionRouter from './routes/adoption.router.js';
+app.use('/api/adoptions', adoptionRouter);
+
+const swaggerDocument = YAML.load('./docs/swagger.yaml');
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 // Ruta para manejar errores 404
 app.use((req, res) => {
   res.status(404).json({ error: "Recurso no encontrado" });
 });
 
-app.listen(8080, () => {
-  console.log("Servidor escuchando en el puerto 8080");
-});
+export default app;

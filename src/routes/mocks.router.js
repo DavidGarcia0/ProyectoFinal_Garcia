@@ -8,14 +8,16 @@ import User from '../persistence/mongo/models/User.js';
 
 // GET /api/mocks/mockingpets
 router.get('/mockingpets', (req, res) => {
-  const pets = generateMockPets(100);
-  res.json({ status: 'success', pets });
+  const qty = parseInt(req.query.qty) || 100;
+  const pets = generateMockPets(qty);
+  res.json(pets);
 });
 
 // GET /api/mocks/mockingusers
 router.get('/mockingusers', async (req, res) => {
-  const users = await generateMockUsers(50);
-  res.json({ status: 'success', users });
+  const qty = parseInt(req.query.qty) || 50;
+  const users = await generateMockUsers(qty);
+  res.json(users);
 });
 
 // POST /api/mocks/generateData
